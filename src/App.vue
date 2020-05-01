@@ -12,13 +12,14 @@
         <router-link to="/seller" tag="a">商家</router-link>
       </div>
     </div>
-    <div class="content">content</div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import ElmHeader from "components/header/Header";
 import { getSeller } from "network/index";
+
 export default {
   name: "App",
   components: {

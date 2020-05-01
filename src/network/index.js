@@ -6,3 +6,10 @@ export function getSeller(){
         url : url.seller 
     })
 }
+
+// goods
+export function getGoods(){
+    return request({
+        url : url.goods
+    })
+}

@@ -77,6 +77,7 @@
 
 <script>
 import Star from "components/star/Star";
+import classMapMix from "common/js/classMap"
 export default {
   name: "Header",
   data() {
@@ -85,6 +86,7 @@ export default {
       detailShow: false
     };
   },
+  mixins : [classMapMix],
   methods: {
     showDetail() {
       this.detailShow = !this.detailShow;
@@ -101,9 +103,7 @@ export default {
       }
     }
   },
-  created() {
-    this.classMap = ["decrease", "discount", "guarantee", "invoice", "special"];
-  },
+
   computed: {
     avatar() {
       return this.seller.avatar;
@@ -190,29 +190,10 @@ export default {
       }
       .support {
         .icon {
-          display: inline-block;
-          vertical-align: top;
-          width: 12px;
-          height: 12px;
-          margin-right: 4px;
-          background-size: 12px 12px;
-          background-repeat: no-repeat;
-          &.decrease {
-            .bg-image("decrease_1");
-          }
-          &.discount {
-            .bg-image("discount_1");
-          }
-          &.guarantee {
-            .bg-image("guarantee_1");
-          }
-          &.invoice {
-            .bg-image("invoice_1");
-          }
-          &.special {
-            .bg-image("special_1");
-          }
+          .iconmix(4px,1);
         }
+        
+        
         .text {
           line-height: 12px;
           font-size: 10px;

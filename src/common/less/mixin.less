@@ -10,11 +10,41 @@
         content: "";
     }
 }
-
+.border-none{
+  &:after {
+    display: none;
+  }
+}
 .bg-image(@url){
     background-image:~"url('./img/@{url}@2x.png')";
     @media (-webkit-min-device-pixel-ratio:3) , (-webkit-min-device-pixel-ratio:3){
         background-image:~"url('./img/@{url}@3x.png')";
     }
 }
+
+.iconmix(@marginRight,@number) {
+    display: inline-block;
+    vertical-align: top;
+    width: 12px;
+    height: 12px;
+    margin-right: @marginRight;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    &.decrease {
+      .bg-image(~"decrease_@{number}");
+    }
+    &.discount {
+      .bg-image(~"discount_@{number}");
+    }
+    &.guarantee {
+      .bg-image(~"guarantee_@{number}");
+    }
+    &.invoice {
+      .bg-image(~"invoice_@{number}");
+    }
+    &.special {
+      .bg-image(~"special_@{number}");
+    }
+  }
+
 
